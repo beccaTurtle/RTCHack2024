@@ -23,10 +23,12 @@ public class TextbookFragment extends Fragment {
     private FragmentTextbookBinding binding;
     private UserAdapter userAdapter;
     private Textbook textbook;
+    private User user;
 
-    public TextbookFragment(Listener listener, Textbook t) {
+    public TextbookFragment(Listener listener, Textbook t, User u) {
         this.listener = listener;
         this.textbook = t;
+        this.user = u;
     }
 
     @Override
@@ -49,7 +51,41 @@ public class TextbookFragment extends Fragment {
         // Set the adapter on the RecyclerView
         binding.recyclerViewPeople.setAdapter(userAdapter);
 
+        // Check if the user has the textbook in their list
+        if (userHasTextbook()) {
+            // User has the textbook, show "I Gave Away This Textbook" button
+            binding.buttonRemoveTextbook.setVisibility(View.VISIBLE);
+            binding.buttonRemoveTextbook.setOnClickListener(v -> onIGaveAwayTextbookClicked());
+        } else {
+            // User doesn't have the textbook, show "I Have This Textbook" button
+            binding.buttonGiveTextbook.setVisibility(View.VISIBLE);
+            binding.buttonGiveTextbook.setOnClickListener(v -> onIHaveTextbookClicked());
+        }
+
+
         // Call a method to fill the adapter with data (you may need to change this based on your requirements)
+        updateUserData();
+    }
+
+    // Check if the user has the textbook in their list
+    private boolean userHasTextbook() {
+        return user.getTextbooks().contains(textbook);
+    }
+
+    // Handle click for "I Gave Away This Textbook" button
+    private void onIGaveAwayTextbookClicked() {
+        // Remove the textbook from the user's list and add it to the textbook's list
+        user.deleteTextbook(textbook);
+        textbook.addUser(user);
+        // Refresh the RecyclerView
+        updateUserData();
+    }
+
+    // Handle click for "I Have This Textbook" button
+    private void onIHaveTextbookClicked() {
+        // Add the user to the textbook's list
+        textbook.addUser(user);
+        // Refresh the RecyclerView
         updateUserData();
     }
 

@@ -1,53 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- fragment_textbook_details.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Book Icon -->
-    <ImageView
-        android:id="@+id/imageViewBookIcon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/book_icon"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
-
-    <!-- Title -->
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/imageViewBookIcon"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Title" />
-
-    <!-- Author -->
-    <TextView
-        android:id="@+id/textViewAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
-        android:layout_toEndOf="@id/imageViewBookIcon"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Author" />
-
-    <!-- Other Optional Information (Edition, Classes, Year, Notes) -->
-    <!-- Add your UI elements for edition, classes, year, and notes here -->
-
-    <!-- RecyclerView for People Who Have the Book -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPeople"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewAuthor"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <!-- Book Icon -->
+        <ImageView
+            android:id="@+id/imageViewBookIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/book_icon"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageViewBookIcon"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Title" />
+
+        <!-- Author -->
+        <TextView
+            android:id="@+id/textViewAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTitle"
+            android:layout_toEndOf="@id/imageViewBookIcon"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Author" />
+
+        <!-- RecyclerView for People Who Have the Book -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewAuthor"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Button to indicate having the textbook -->
+        <Button
+            android:id="@+id/buttonGiveTextbook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerViewPeople"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="I Have This Textbook!" />
+
+        <!-- Button to indicate giving away the textbook -->
+        <Button
+            android:id="@+id/buttonRemoveTextbook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonGiveTextbook"
+            android:layout_marginStart="16dp"
+            android:text="I Gave Away This Textbook!" />
+    </RelativeLayout>
+</ScrollView>
