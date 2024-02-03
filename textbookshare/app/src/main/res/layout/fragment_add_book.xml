@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AddBook">
+    tools:context=".view.AddBookFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/bookName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name of the Book*"
@@ -24,7 +24,7 @@
             />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/authorName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Author Name*"
@@ -56,7 +56,7 @@
             />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addBookBtn"
             android:layout_width="400dp"
             android:layout_height="400dp"
             android:text="Add"

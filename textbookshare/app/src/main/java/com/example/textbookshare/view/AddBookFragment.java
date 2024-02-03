@@ -2,6 +2,8 @@ package com.example.textbookshare.view;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 import android.widget.Button;
 
 import com.example.textbookshare.R;
+import com.example.textbookshare.databinding.FragmentAddBookBinding;
+import com.example.textbookshare.databinding.FragmentProfileBinding;
 import com.example.textbookshare.model.Library;
 import com.example.textbookshare.model.Textbook;
 
@@ -23,62 +27,32 @@ import com.example.textbookshare.model.Textbook;
  */
 public class AddBookFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    Listener listener;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    FragmentAddBookBinding binding;
 
-    public AddBookFragment() {
-        // Required empty public constructor
+    public AddBookFragment(Listener listener) {
+        this.listener = listener;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddBook.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddBookFragment newInstance(String param1, String param2) {
-        AddBookFragment fragment = new AddBookFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_add_book, container, false);
+        this.binding = FragmentAddBookBinding.inflate(inflater);
+        return this.binding.getRoot();
+    }
 
-        final EditText bookNameEditText = rootView.findViewById(R.id.textView);
-        final EditText authorNameEditText = rootView.findViewById(R.id.textView2);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        Button addButton = rootView.findViewById(R.id.button);
 
-        addButton.setOnClickListener(new View.OnClickListener(){
+        this.binding.addBookBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                String bookName = bookNameEditText.getText().toString();
-                String authorName = authorNameEditText.getText().toString();
+                String bookName = AddBookFragment.this.binding.bookName.getText().toString();
+                String authorName = AddBookFragment.this.binding.authorName.getText().toString();
 
                 if(TextUtils.isEmpty(bookName) || TextUtils.isEmpty(authorName)){
                     //Display a message or handle the case where required fields are empty
@@ -88,13 +62,12 @@ public class AddBookFragment extends Fragment {
                     //Proceed with adding the book, including optional fields
                     Textbook newBook = new Textbook(bookName, authorName);
 
-                    Library library = new Library();
-                    library.addBook(newBook);
+                    AddBookFragment.this.listener.onAddToLibrary(newBook);
+
 
                     Toast.makeText(getContext(), "Book added successfully", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        return rootView;
     }
 }

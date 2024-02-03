@@ -55,6 +55,11 @@ public class Textbook implements Comparable<Textbook>{
         }
     }
 
+    public boolean sameTextbook(Textbook t){
+        return this.title.toLowerCase().equals(t.getTitle().toLowerCase()) &&
+                this.author.toLowerCase().equals(t.getAuthor().toLowerCase());
+    }
+
     public void addUser(User u){
         users.add(u);
     }

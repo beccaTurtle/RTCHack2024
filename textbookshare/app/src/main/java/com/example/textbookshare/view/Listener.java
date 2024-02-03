@@ -24,4 +24,6 @@ public interface Listener {
     List<User> getUsersForTextbook(Textbook textbook);
 
     void onGoToAdd();
+
+    void onAddToLibrary(Textbook book);
 }

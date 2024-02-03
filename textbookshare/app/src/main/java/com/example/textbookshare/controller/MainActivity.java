@@ -96,7 +96,14 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
 
     @Override
     public void onGoToAdd() {
-        //display add book fragment
+        AddBookFragment addFragment = new AddBookFragment(this);
+        this.mainView.displayFragment(addFragment, true, "add");
+
+    }
+
+    @Override
+    public void onAddToLibrary(Textbook book) {
+        lib.addBook(book);
     }
 }
 

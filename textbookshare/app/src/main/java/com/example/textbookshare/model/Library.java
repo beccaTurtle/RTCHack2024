@@ -42,7 +42,18 @@ public class Library {
     }
 
     public void addBook(Textbook newBook) {
-        textbooks.add(newBook);
+        if (!this.inLibrary(newBook)) {
+            textbooks.add(newBook);
+        }
+    }
+
+    private boolean inLibrary(Textbook newBook){
+        for (Textbook t : textbooks) {
+            if (t.sameTextbook(newBook)){
+                return true;
+            }
+        }
+        return false;
     }
 
 
