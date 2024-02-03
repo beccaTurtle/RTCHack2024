@@ -10,6 +10,7 @@ import com.example.textbookshare.model.*;
 
 import com.example.textbookshare.model.Library;
 import com.example.textbookshare.model.Textbook;
+import com.example.textbookshare.view.MainView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,6 +19,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     User user;
     Library lib;
+    MainView mainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
