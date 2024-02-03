@@ -21,17 +21,19 @@ public class Library {
                 for(String titleTerm : titleArray){
                     if(term.equals(titleTerm)){
                         relevance++;
-                        break;
                     }
                 }
                 for(String authTerm : titleArray){
                     if(term.equals(authTerm)){
                         relevance++;
-                        break;
                     }
                 }
             }
             t.setRelevance(relevance);
+
+            if (relevance > 0){
+                results.add(t);
+            }
         }
 
         Collections.sort(results);

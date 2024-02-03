@@ -26,11 +26,4 @@ public interface IMainView {
      */
     void displayFragment(Fragment fragment, boolean reversible, String name);
 
-
-    /**
-     * Display search results on the screen.
-     *
-     * @param searchResults The restaurants to be displayed
-     */
-    void displaySearchResults(List<Textbook> searchResults);
 }

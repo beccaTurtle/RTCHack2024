@@ -8,19 +8,24 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.textbookshare.databinding.MainBinding;
+import com.example.textbookshare.model.*;
+
+import java.util.*;
 
 public class MainView implements IMainView {
     FragmentManager fmanager; // lets us perform fragment transactions
     MainBinding binding; // gives us access to all the graphical components in res/layout/main.xml
 
+    Listener listener;
 
     /**
      * Constructor method.
      * @param activity The android activity the screen is associated with.
      */
-    public MainView(FragmentActivity activity){
+    public MainView(FragmentActivity activity, Listener listener){
         this.fmanager = activity.getSupportFragmentManager();
         this.binding = MainBinding.inflate(activity.getLayoutInflater());
+        this.listener = listener;
     }
 
 
@@ -50,16 +55,12 @@ public class MainView implements IMainView {
     }
 
 
-    /**
-     * Displays the restaurant details screen.
-     * @param searchResults
-     */
-    public void displaySearchResults(List<Textbook> searchResults) {
-        Fragment currentFragment = fmanager.findFragmentByTag("search");
-        if (currentFragment instanceof SearchFragment) {
-            ((SearchFragment) currentFragment).updateSearchResults(searchResults);
-            ((SearchFragment)currentFragment).showNoResultsMessage(searchResults.isEmpty());
-        }
-    }
+    //public void displaySearchResults(List<Textbook> searchResults) {
+    //Fragment currentFragment = fmanager.findFragmentByTag("search");
+    //if (currentFragment instanceof SearchFragment) {
+   // ((SearchFragment) currentFragment).updateSearchResults(searchResults);
+   // ((SearchFragment)currentFragment).showNoResultsMessage(searchResults.isEmpty());
+    // }
+    // }
 
 }
