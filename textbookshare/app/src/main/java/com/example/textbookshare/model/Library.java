@@ -15,15 +15,27 @@ public class Library {
         for (Textbook t : textbooks){
             String[] titleArray = t.getTitle().toLowerCase().split(" ");
             String[] authorArray = t.getAuthor().toLowerCase().split(" ");
-
+            int relevance = 0;
 
             for (String term : inputArray) {
-
+                for(String titleTerm : titleArray){
+                    if(term.equals(titleTerm)){
+                        relevance++;
+                        break;
+                    }
+                }
+                for(String authTerm : titleArray){
+                    if(term.equals(authTerm)){
+                        relevance++;
+                        break;
+                    }
+                }
             }
+            t.setRelevance(relevance);
         }
 
-        return textbooks;
-
+        Collections.sort(results);
+        return results;
     }
 
 }
