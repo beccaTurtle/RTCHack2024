@@ -43,6 +43,10 @@ public class TextbookFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Assign values
+        this.binding.textViewTitle.setText(textbook.getTitle());
+        this.binding.textViewAuthor.setText(textbook.getAuthor());
+
         // Set up the RecyclerView using View Binding
         binding.recyclerViewPeople.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
