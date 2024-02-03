@@ -41,6 +41,11 @@ public class Library {
         return results;
     }
 
+    public void addBook(Textbook newBook) {
+        textbooks.add(newBook);
+    }
+
+
     public void loadSampleBooks(){
         Textbook t1 = new Textbook("Title 1", "Author 1");
         textbooks.add(t1);

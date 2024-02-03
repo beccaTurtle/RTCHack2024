@@ -8,12 +8,12 @@ public class User {
     String email;
     int id;
 
-    List<Post> posts;
+    List<Textbook> textbooks;
 
     public User(String username, String email) {
         this.username = username;
         this.email = email;
-        this.posts = new ArrayList<Post>();
+        this.textbooks = new ArrayList<Textbook>();
     }
 
     public String getUsername(){
@@ -33,18 +33,19 @@ public class User {
         this.username = username;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public List<Textbook> getTextbooks() {
+        return textbooks;
     }
 
-    public List<Post> addPost(Post p){
-        posts.add(p);
-        return posts;
+    public List<Textbook> addTextbook(Textbook t){
+        textbooks.add(t);
+        return textbooks;
     }
 
-    public List<Post> deletePost(Post p){
+    public List<Textbook> deleteTextbook(Textbook t){
         // finish
-        return posts;
+        textbooks.remove(t);
+        return textbooks;
     }
 
 

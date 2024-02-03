@@ -55,4 +55,12 @@ public class Textbook implements Comparable<Textbook>{
         }
     }
 
+    public void addUser(User u){
+        users.add(u);
+    }
+
+    public void deleteUser(User u){
+        users.remove(u);
+    }
+
 }
