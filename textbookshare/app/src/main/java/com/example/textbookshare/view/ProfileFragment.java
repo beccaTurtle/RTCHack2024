@@ -17,7 +17,6 @@ import com.example.textbookshare.databinding.FragmentSearchBinding;
 
 public class ProfileFragment extends Fragment {
 
-
     Listener listener;
 
     FragmentProfileBinding binding;

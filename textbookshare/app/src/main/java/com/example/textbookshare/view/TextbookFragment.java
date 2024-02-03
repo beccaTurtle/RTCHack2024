@@ -1,66 +1,63 @@
 package com.example.textbookshare.view;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.textbookshare.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TextbookFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.textbookshare.databinding.FragmentTextbookBinding;
+import com.example.textbookshare.model.Textbook;
+import com.example.textbookshare.model.User;
+import com.example.textbookshare.view.recyclerview.UserAdapter;
+
+import java.util.List;
+
 public class TextbookFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private Listener listener;
+    private FragmentTextbookBinding binding;
+    private UserAdapter userAdapter;
+    private Textbook textbook;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public TextbookFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TextbookFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TextbookFragment newInstance(String param1, String param2) {
-        TextbookFragment fragment = new TextbookFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public TextbookFragment(Listener listener, Textbook t) {
+        this.listener = listener;
+        this.textbook = t;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_textbook, container, false);
+        this.binding = FragmentTextbookBinding.inflate(inflater);
+        return this.binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Set up the RecyclerView using View Binding
+        binding.recyclerViewPeople.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        // Create an instance of UserAdapter
+        userAdapter = new UserAdapter(view.getContext());
+
+        // Set the adapter on the RecyclerView
+        binding.recyclerViewPeople.setAdapter(userAdapter);
+
+        // Call a method to fill the adapter with data (you may need to change this based on your requirements)
+        updateUserData();
+    }
+
+    // Method to update the adapter with data
+    private void updateUserData() {
+        // Get the list of users from your listener or any other source
+        List<User> users = listener.getUsersForTextbook(textbook);
+        // Update the adapter with the new data
+        userAdapter.setUsers(users);
     }
 }
