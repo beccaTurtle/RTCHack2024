@@ -33,6 +33,13 @@ public class MainView implements IMainView {
                 MainView.this.listener.onGoToProfile();
             }
         });
+
+        this.binding.searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainView.this.listener.onGoToSearch();
+            }
+        });
     }
 
 

@@ -64,17 +64,11 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
 
     @Override
     public String getUsername() {
-        if (user == null){
-            return "Choose a username";
-        }
         return user.getUsername();
     }
 
     @Override
     public String getEmail() {
-        if (user == null){
-            return "Input your email";
-        }
         return user.getEmail();
     }
 
@@ -83,6 +77,19 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
         ProfileFragment profileFragment = new ProfileFragment(this);
         this.mainView.displayFragment(profileFragment, true, "profile");
 
+    }
+
+    @Override
+    public void onGoToSearch() {
+        SearchFragment searchFragment = new SearchFragment(this);
+        this.mainView.displayFragment(searchFragment, true, "profile");
+
+
+    }
+
+    @Override
+    public boolean userExists() {
+        return this.user != null;
     }
 }
 

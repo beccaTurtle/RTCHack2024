@@ -25,8 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Choose a username" />
+                android:hint="Choose a username *"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/email"
@@ -34,8 +34,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="text|textEmailAddress"
-                android:text="Input your email" />
+                android:hint="Input email *"
+                android:inputType="text|textEmailAddress" />
 
             <Button
                 android:id="@+id/profileUpdateBtn"

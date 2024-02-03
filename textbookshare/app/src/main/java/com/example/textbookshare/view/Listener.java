@@ -15,4 +15,8 @@ public interface Listener {
     String getEmail();
 
     void onGoToProfile();
+
+    void onGoToSearch();
+
+    boolean userExists();
 }
