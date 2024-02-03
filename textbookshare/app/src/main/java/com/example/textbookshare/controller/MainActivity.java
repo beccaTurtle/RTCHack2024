@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
     }
 
     public void onNavigateToTextbook(Textbook t){
-        TextbookFragment textFragment = new TextbookFragment(this);
+        TextbookFragment textFragment = new TextbookFragment();
+        // this will be needed as a parm of frag
         this.mainView.displayFragment(textFragment, true, "textbook");
     }
 
