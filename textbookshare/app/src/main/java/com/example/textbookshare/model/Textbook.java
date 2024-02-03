@@ -4,13 +4,13 @@ import java.util.*;
 public class Textbook implements Comparable<Textbook>{
     String title;
     String author;
-    List<Post> posts;
+    List<User> users;
     int relevance;
 
     public Textbook(String title, String author){
         this.title = title;
         this.author = author;
-        this.posts = new ArrayList<Post>();
+        this.users = new ArrayList<User>();
         this.relevance = 0;
     }
 
@@ -23,6 +23,10 @@ public class Textbook implements Comparable<Textbook>{
     }
     public int getRelevance() {
         return relevance;
+    }
+
+    public List<User> getUsers() {
+        return users;
     }
 
     public void setTitle(String title) {

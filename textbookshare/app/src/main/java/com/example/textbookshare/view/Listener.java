@@ -1,6 +1,7 @@
 package com.example.textbookshare.view;
 
 import com.example.textbookshare.model.Textbook;
+import com.example.textbookshare.model.User;
 
 import java.util.*;
 
@@ -15,4 +16,6 @@ public interface Listener {
     String getEmail();
 
     void onGoToProfile();
+
+    List<User> getUsersForTextbook(Textbook textbook);
 }

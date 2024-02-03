@@ -37,15 +37,13 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
     @Override
     public List<Textbook> onPerformSearch(String searchTerm) {
         List<Textbook> matches = lib.search(searchTerm);
-
         //this.mainView.displaySearchResults(matches);
-
         return matches;
 
     }
 
     public void onNavigateToTextbook(Textbook t){
-        TextbookFragment textFragment = new TextbookFragment(this);
+        TextbookFragment textFragment = new TextbookFragment(this, t);
         this.mainView.displayFragment(textFragment, true, "textbook");
     }
 
@@ -82,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
         ProfileFragment profileFragment = new ProfileFragment(this);
         this.mainView.displayFragment(profileFragment, true, "profile");
 
+    }
+
+    public List<User> getUsersForTextbook(Textbook t){
+        return t.getUsers();
     }
 }
 
