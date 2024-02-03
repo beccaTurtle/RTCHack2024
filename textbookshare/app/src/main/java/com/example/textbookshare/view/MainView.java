@@ -40,6 +40,13 @@ public class MainView implements IMainView {
                 MainView.this.listener.onGoToSearch();
             }
         });
+
+        this.binding.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainView.this.listener.onGoToAdd();
+            }
+        });
     }
 
 

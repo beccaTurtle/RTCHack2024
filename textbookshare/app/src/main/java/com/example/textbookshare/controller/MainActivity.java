@@ -93,5 +93,10 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
     public List<User> getUsersForTextbook(Textbook t){
         return t.getUsers();
     }
+
+    @Override
+    public void onGoToAdd() {
+        //display add book fragment
+    }
 }
 

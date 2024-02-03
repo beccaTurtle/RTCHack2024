@@ -38,9 +38,10 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if (this.listener.userExists()){
-            this.binding.username.setText(this.listener.getUsername());
-            this.binding.email.setText(this.listener.getEmail());
+            this.binding.usernameDisplay.setText("Username: " + this.listener.getUsername());
+            this.binding.emailDisplay.setText("Email: " + this.listener.getEmail());
         }
+        this.binding.error.setText("");
 
         this.binding.profileUpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +52,14 @@ public class ProfileFragment extends Fragment {
                 Editable emailE = ProfileFragment.this.binding.email.getText();
                 String newEmail = emailE.toString();
 
-                if ((newUsername.length() > 2) && (newEmail.length() > 2)) {
+                if ((newUsername.length() > 3) && (newEmail.length() > 3)) {
                     ProfileFragment.this.listener.onUpdateProfile(newUsername, newEmail);
+                    ProfileFragment.this.binding.usernameDisplay.setText("Username: " + ProfileFragment.this.listener.getUsername());
+                    ProfileFragment.this.binding.emailDisplay.setText("Email: " + ProfileFragment.this.listener.getEmail());
+                    ProfileFragment.this.binding.error.setText("");
+                }
+                else {
+                    ProfileFragment.this.binding.error.setText("Error updating profile");
                 }
             }
         });
