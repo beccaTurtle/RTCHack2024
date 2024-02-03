@@ -46,6 +46,8 @@ public class Library {
         textbooks.add(t1);
         Textbook t2 = new Textbook("Title 2", "Author 2");
         textbooks.add(t2);
+        Textbook t3 = new Textbook("Another title 2", "Another title 2");
+        textbooks.add(t3);
     }
 
 }

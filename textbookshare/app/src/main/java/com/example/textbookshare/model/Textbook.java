@@ -41,10 +41,10 @@ public class Textbook implements Comparable<Textbook>{
     public int compareTo(Textbook t)
     {
         if (this.relevance > t.relevance) {
-            return 1;
+            return -1;
         }
         else if (this.relevance < t.relevance) {
-            return -1;
+            return 1;
         }
         else {
             return 0;

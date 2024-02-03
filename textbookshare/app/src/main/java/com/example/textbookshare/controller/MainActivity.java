@@ -44,7 +44,10 @@ public class MainActivity extends AppCompatActivity implements Listener, ISearch
 
     }
 
-    public void onNavigateToTextbook(Textbook t){}
+    public void onNavigateToTextbook(Textbook t){
+        TextbookFragment textFragment = new TextbookFragment(this);
+        this.mainView.displayFragment(textFragment, true, "textbook");
+    }
 
     @Override
     public void onUpdateProfile(String newUsername, String newEmail) {
