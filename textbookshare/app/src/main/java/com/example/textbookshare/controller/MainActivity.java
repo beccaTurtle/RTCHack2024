@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.textbookshare.R;
-
 import com.example.textbookshare.model.*;
 
 import com.example.textbookshare.model.Library;
@@ -14,8 +12,6 @@ import com.example.textbookshare.model.Textbook;
 import com.example.textbookshare.view.*;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Listener {
@@ -27,14 +23,13 @@ public class MainActivity extends AppCompatActivity implements Listener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         this.lib = new Library();
         this.mainView = new MainView(this, this);
 
-        Fragment searchFragment = new SearchFragment(this);
+        SearchFragment searchFragment = new SearchFragment(this);
         this.mainView.displayFragment(searchFragment, false, "search");
 
-        setContentView( this.mainView.getRootView());
+        setContentView(this.mainView.getRootView());
 
     }
 
@@ -49,5 +44,39 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
     }
 
+    @Override
+    public void onUpdateProfile(String newUsername, String newEmail) {
+        if (this.user == null){
+            user = new User(newUsername, newEmail);
+        }
+        else{
+            user.setUsername(newUsername);
+            user.setEmail(newEmail);
+        }
 
+    }
+
+    @Override
+    public String getUsername() {
+        if (user == null){
+            return "Choose a username";
+        }
+        return user.getUsername();
+    }
+
+    @Override
+    public String getEmail() {
+        if (user == null){
+            return "Input your email";
+        }
+        return user.getEmail();
+    }
+
+    @Override
+    public void onGoToProfile() {
+        ProfileFragment profileFragment = new ProfileFragment(this);
+        this.mainView.displayFragment(profileFragment, true, "profile");
+
+    }
 }
+

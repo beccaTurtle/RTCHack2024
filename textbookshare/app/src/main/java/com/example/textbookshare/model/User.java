@@ -2,16 +2,17 @@ package com.example.textbookshare.model;
 import java.util.*;
 
 public class User {
+
     String username;
+
     String email;
     int id;
 
     List<Post> posts;
 
-    public User(String username, String email, int id) {
+    public User(String username, String email) {
         this.username = username;
         this.email = email;
-        this.id = id;
         this.posts = new ArrayList<Post>();
     }
 
@@ -19,8 +20,17 @@ public class User {
         return username;
     }
 
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public List<Post> getPosts() {
@@ -36,6 +46,7 @@ public class User {
         // finish
         return posts;
     }
+
 
 
 }

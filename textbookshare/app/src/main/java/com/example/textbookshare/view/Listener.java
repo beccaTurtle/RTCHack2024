@@ -7,4 +7,12 @@ import java.util.*;
 public interface Listener {
 
     public List<Textbook> onPerformSearch(String searchTerm);
+
+    void onUpdateProfile(String newUsername, String newEmail);
+
+    String getUsername();
+
+    String getEmail();
+
+    void onGoToProfile();
 }
