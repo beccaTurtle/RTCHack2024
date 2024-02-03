@@ -6,6 +6,7 @@ public class Library {
 
     public Library(){
         textbooks = new ArrayList<Textbook>();
+        loadSampleBooks();
     }
 
     public List<Textbook> search(String input){
@@ -38,6 +39,13 @@ public class Library {
 
         Collections.sort(results);
         return results;
+    }
+
+    public void loadSampleBooks(){
+        Textbook t1 = new Textbook("Title 1", "Author 1");
+        textbooks.add(t1);
+        Textbook t2 = new Textbook("Title 1", "Author 1");
+        textbooks.add(t2);
     }
 
 }

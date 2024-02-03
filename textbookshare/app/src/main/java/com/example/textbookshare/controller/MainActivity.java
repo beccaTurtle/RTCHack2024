@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements Listener {
+public class MainActivity extends AppCompatActivity implements Listener, ISearchView.Listener {
     User user;
     Library lib;
     MainView mainView;
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements Listener {
         return matches;
 
     }
+
+    public void onNavigateToTextbook(Textbook t){}
 
 
 }
