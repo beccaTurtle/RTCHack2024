@@ -15,55 +15,48 @@
             android:id="@+id/bookName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name of the Book*"
-            android:hint="*Name of the book"
             android:layout_margin="16dp"
-            android:inputType="text"
             android:background="@drawable/edittext_outline"
-            android:padding="16dp"
-            />
+            android:hint="Name of the Book*"
+            android:inputType="text"
+            android:padding="16dp" />
 
         <TextView
             android:id="@+id/authorName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Author Name*"
             android:layout_margin="16dp"
-            android:hint="*Author Name"
-            android:inputType="text"
             android:background="@drawable/edittext_outline"
-            android:padding="16dp"
-            />
+            android:hint="Author Name*"
+            android:inputType="text"
+            android:padding="16dp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/edition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Edition"
             android:background="@drawable/edittext_outline"
-            android:padding="16dp"
-            />
+            android:hint="Edition"
+            android:padding="16dp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_margin="16dp"
-            android:text="Extra notes..."
             android:background="@drawable/edittext_outline"
-            android:padding="16dp"
-            />
+            android:hint="Extra notes"
+            android:padding="16dp" />
 
         <Button
             android:id="@+id/addBookBtn"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:text="Add"
-            android:background="@drawable/edittext_outline"
-            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:background="@drawable/edittext_outline"
             android:drawableBottom="@drawable/addition"
-            />
+            android:padding="16dp"
+            android:text="Add" />
     </LinearLayout>
 </FrameLayout>
