@@ -26,6 +26,13 @@ public class MainView implements IMainView {
         this.fmanager = activity.getSupportFragmentManager();
         this.binding = MainBinding.inflate(activity.getLayoutInflater());
         this.listener = listener;
+
+        this.binding.profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainView.this.listener.onGoToProfile();
+            }
+        });
     }
 
 
