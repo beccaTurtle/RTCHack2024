@@ -44,7 +44,7 @@ public class Library {
     public void loadSampleBooks(){
         Textbook t1 = new Textbook("Title 1", "Author 1");
         textbooks.add(t1);
-        Textbook t2 = new Textbook("Title 1", "Author 1");
+        Textbook t2 = new Textbook("Title 2", "Author 2");
         textbooks.add(t2);
     }
 
