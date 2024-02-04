@@ -49,7 +49,7 @@ public class TextbookFragment extends Fragment {
         this.binding.textViewAuthor.setText(textbook.getAuthor());
         try{
             if(Integer.parseInt(textbook.getEdition()) > 0){
-                this.binding.textViewEdition.setText("Edition: " + textbook.getTitle());
+                this.binding.textViewEdition.setText("Edition: " + textbook.getEdition());
             } else{
                 binding.textViewEdition.setVisibility(View.GONE);
             }

@@ -27,7 +27,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_outline"
             android:ems="10"
-            android:hint="Name of the book"
+            android:hint="Title"
             android:inputType="text"
             android:padding="16dp"
             android:textColor="#fff"
