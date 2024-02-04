@@ -58,12 +58,31 @@ public class Library {
 
 
     public void loadSampleBooks(){
-        Textbook t1 = new Textbook("Title 1", "Author 1");
+        User u1 = new User("Caroline Smith", "csmith@vassar.edu");
+        User u2 = new User("Elta B", "helloworld@gmail.com");
+        User u3 = new User("Becca", "beccathebeast@hotmail.com");
+        Textbook t1 = new Textbook("Organizational Behavior", "Stephen Robbins");
+        t1.addUser(u1);
+        u1.addTextbook(t1);
         textbooks.add(t1);
-        Textbook t2 = new Textbook("Title 2", "Author 2");
+        Textbook t2 = new Textbook("International Business", "John Daniels");
         textbooks.add(t2);
-        Textbook t3 = new Textbook("Another title 2", "Another title 2");
+        Textbook t3 = new Textbook("Computer Networks and Internets", "Douglas Comer");
+        t3.addUser(u1);
+        u1.addTextbook(t3);
+        t3.addUser(u2);
+        u2.addTextbook(t3);
         textbooks.add(t3);
+        Textbook t4 = new Textbook("Computer Ethics", "Deborah Johnson");
+        t4.addUser(u2);
+        u2.addTextbook(t4);
+        textbooks.add(t4);
+        Textbook t5 = new Textbook("Database Systems", "Douglas Comer");
+        t5.addUser(u3);
+        u3.addTextbook(t5);
+        textbooks.add(t5);
+        Textbook t6 = new Textbook("Architecture of Computer Hardware", "Irv Englander");
+        textbooks.add(t6);
     }
 
 }
