@@ -53,6 +53,6 @@
             android:background="@drawable/tan_button"
             android:drawableTop="@drawable/ic_add_book"
             android:gravity="center"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
