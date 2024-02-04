@@ -1,5 +1,9 @@
 # RTCHack2024
 
+## Instructions
+
+Clone the repository and open the textbookshare folder in Android Studio (giraffe version). Try out the app using the built-in emulator of a Pixel 5 API 34 phone.
+
 ## Inspiration
 
 Many of the textbooks that are needed for college classes can be very expensive, especially if you have multiple classes and have to buy a whole set of new ones each semester. We wanted to create an application that would allow textbook lending within a campus in order to create a more affordable option for accessing textbooks and to empower students to create a community around helping each other out! 
