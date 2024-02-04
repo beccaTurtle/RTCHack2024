@@ -1,64 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AddBookFragment">
+    tools:context=".view.AddBookFragment"
+    >
 
     <LinearLayout
+        android:background="@drawable/bg_addbook"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
         android:orientation="vertical"
-        android:padding="16dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
+
+        <EditText
             android:id="@+id/bookName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_outline"
-            android:hint="Name of the Book*"
+            android:ems="10"
+            android:hint="Name of the book"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColor="#fff" />
 
-        <TextView
+
+        <EditText
             android:id="@+id/authorName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_outline"
-            android:hint="Author Name*"
+            android:ems="10"
+            android:hint="Author"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColor="#fff" />
 
-        <TextView
+        <EditText
             android:id="@+id/edition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_outline"
+            android:ems="10"
             android:hint="Edition"
             android:inputType="text"
-            android:padding="16dp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/edittext_outline"
-            android:hint="Extra notes"
-            android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/addBookBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/edittext_outline"
-            android:drawableBottom="@drawable/addition"
-            android:padding="16dp"
-            android:text="Add" />
+            android:background="@android:color/transparent"
+            android:drawableBottom="@drawable/addition"/>
     </LinearLayout>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -1,6 +1,17 @@
 <!-- res/drawable/edittext_outline.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <stroke android:width="2dp" android:color="#000" />
+    <stroke android:width="2dp" android:color="#Afff" />
     <corners android:radius="8dp" />
     <padding android:left="5dp" android:right="5dp" />
+
+
+    <solid android:color="#A000" /> <!-- Set your desired background color here -->
+    <corners android:radius="8dp" /> <!-- Adjust radius as needed for rounded corners -->
 </shape>
+
+
+
+
+
+
+
