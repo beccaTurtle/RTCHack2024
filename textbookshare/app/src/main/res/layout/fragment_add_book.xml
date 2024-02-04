@@ -38,6 +38,7 @@
             android:layout_margin="16dp"
             android:background="@drawable/edittext_outline"
             android:hint="Edition"
+            android:inputType="text"
             android:padding="16dp" />
 
         <TextView
@@ -47,6 +48,7 @@
             android:layout_margin="16dp"
             android:background="@drawable/edittext_outline"
             android:hint="Extra notes"
+            android:inputType="text"
             android:padding="16dp" />
 
         <Button
