@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.textbookshare.R;
 import com.example.textbookshare.databinding.FragmentProfileBinding;
@@ -41,7 +42,6 @@ public class ProfileFragment extends Fragment {
             this.binding.usernameDisplay.setText("Username: " + this.listener.getUsername());
             this.binding.emailDisplay.setText("Email: " + this.listener.getEmail());
         }
-        this.binding.error.setText("");
 
         this.binding.profileUpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,10 +56,13 @@ public class ProfileFragment extends Fragment {
                     ProfileFragment.this.listener.onUpdateProfile(newUsername, newEmail);
                     ProfileFragment.this.binding.usernameDisplay.setText("Username: " + ProfileFragment.this.listener.getUsername());
                     ProfileFragment.this.binding.emailDisplay.setText("Email: " + ProfileFragment.this.listener.getEmail());
-                    ProfileFragment.this.binding.error.setText("");
+
+                    Toast.makeText(getContext(), "Profile updated!", Toast.LENGTH_SHORT).show();
+
                 }
                 else {
-                    ProfileFragment.this.binding.error.setText("Error updating profile");
+                    Toast.makeText(getContext(), "Error, all field are required and must be 4+ characters", Toast.LENGTH_LONG).show();
+
                 }
             }
         });
