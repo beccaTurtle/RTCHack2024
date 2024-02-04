@@ -4,7 +4,6 @@ import java.util.*;
 public class Textbook implements Comparable<Textbook>{
     String title;
     String author;
-
     String edition = "-1";
     List<User> users;
     int relevance;
@@ -36,7 +35,6 @@ public class Textbook implements Comparable<Textbook>{
     public List<User> getUsers() {
         return users;
     }
-
     public String getEdition() {
         return edition;
     }

@@ -44,12 +44,17 @@ public class TextbookFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Assign values
-        String title = textbook.getTitle();
-        if(textbook.getEdition() > 0){
-
-        }
-        this.binding.textViewTitle.setText(title);
+        this.binding.textViewTitle.setText(textbook.getTitle());
         this.binding.textViewAuthor.setText(textbook.getAuthor());
+        try{
+            if(Integer.parseInt(textbook.getEdition()) > 0){
+                this.binding.textViewEdition.setText("Edition: " + textbook.getTitle());
+            } else{
+                binding.textViewEdition.setVisibility(View.GONE);
+            }
+        } catch(Exception e){
+            binding.textViewEdition.setVisibility(View.GONE);
+        }
 
         // Set up the RecyclerView using View Binding
         binding.recyclerViewPeople.setLayoutManager(new LinearLayoutManager(view.getContext()));
