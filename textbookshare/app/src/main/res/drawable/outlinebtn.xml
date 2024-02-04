@@ -1,18 +1,18 @@
-<!-- res/drawable/button_outline.xml -->
+<!-- res/drawable/button_custom.xml -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <!-- Background color of the button -->
+        <!-- Outer background with black outline -->
         <shape android:shape="rectangle">
-            <stroke android:width="2dp" android:color="#Afff" />
-            <corners android:radius="8dp" /> <!-- You can adjust the corner radius -->
+            <solid android:color="@android:color/transparent" /> <!-- Transparent inner color -->
+            <stroke android:color="#000000" android:width="2dp" /> <!-- Black outline color and width -->
+            <corners android:radius="8dp" /> <!-- Adjust the corner radius if needed -->
         </shape>
     </item>
-    <item android:right="2dp" android:left="2dp" android:top="2dp" android:bottom="2dp">
-        <!-- Outline color and thickness -->
+    <item android:left="2dp" android:right="2dp" android:top="2dp" android:bottom="2dp">
+        <!-- Inner background to create the outline effect -->
         <shape android:shape="rectangle">
-            <stroke android:width="2dp" android:color="#Afff" />
-            <stroke android:color="#fff" android:width="2dp" />
-            <corners android:radius="8dp" />
+            <solid android:color="#FFFFFF" /> <!-- White color for inner background -->
+            <corners android:radius="8dp" /> <!-- Adjust the corner radius if needed -->
         </shape>
     </item>
 </layer-list>
