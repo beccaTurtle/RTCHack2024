@@ -53,6 +53,7 @@ public class AddBookFragment extends Fragment {
             public void onClick(View view){
                 String bookName = AddBookFragment.this.binding.bookName.getText().toString();
                 String authorName = AddBookFragment.this.binding.authorName.getText().toString();
+                String editionName = AddBookFragment.this.binding.edition.getText().toString();
 
                 if(TextUtils.isEmpty(bookName) || TextUtils.isEmpty(authorName)){
                     //Display a message or handle the case where required fields are empty
@@ -60,7 +61,15 @@ public class AddBookFragment extends Fragment {
                 }
                 else {
                     //Proceed with adding the book, including optional fields
-                    Textbook newBook = new Textbook(bookName, authorName);
+
+                    Textbook newBook;
+
+                    if (editionName.length() > 0) {
+                         newBook = new Textbook(bookName, authorName, editionName);
+                    }
+                    else {
+                        newBook = new Textbook(bookName, authorName);
+                    }
 
                     AddBookFragment.this.listener.onAddToLibrary(newBook);
 

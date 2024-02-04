@@ -4,6 +4,8 @@ import java.util.*;
 public class Textbook implements Comparable<Textbook>{
     String title;
     String author;
+
+    String edition = "-1";
     List<User> users;
     int relevance;
 
@@ -13,6 +15,12 @@ public class Textbook implements Comparable<Textbook>{
         this.users = new ArrayList<User>();
         this.relevance = 0;
     }
+
+    public Textbook(String title, String author, String edition){
+        this(title, author);
+        this.edition = edition;
+    }
+
 
     public String getTitle() {
         return title;
@@ -27,6 +35,10 @@ public class Textbook implements Comparable<Textbook>{
 
     public List<User> getUsers() {
         return users;
+    }
+
+    public String getEdition() {
+        return edition;
     }
 
     public void setTitle(String title) {
@@ -57,7 +69,8 @@ public class Textbook implements Comparable<Textbook>{
 
     public boolean sameTextbook(Textbook t){
         return this.title.toLowerCase().equals(t.getTitle().toLowerCase()) &&
-                this.author.toLowerCase().equals(t.getAuthor().toLowerCase());
+                this.author.toLowerCase().equals(t.getAuthor().toLowerCase()) &&
+                    this.edition.equals(t.getEdition());
     }
 
     public void addUser(User u){
