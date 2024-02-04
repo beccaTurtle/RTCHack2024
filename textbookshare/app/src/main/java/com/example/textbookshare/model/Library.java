@@ -24,7 +24,7 @@ public class Library {
                         relevance++;
                     }
                 }
-                for(String authTerm : titleArray){
+                for(String authTerm : authorArray){
                     if(term.equals(authTerm)){
                         relevance++;
                     }
