@@ -27,41 +27,6 @@
 
         <Button
             android:id="@+id/searchBtn"
-<<<<<<< HEAD
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            android:layout_gravity="center"
-            android:layout_marginBottom="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#fff"
-            android:drawableBottom="@drawable/search"
-
-            />
-
-        <Button
-            android:id="@+id/profileBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:layout_gravity="center"
-            android:layout_marginBottom="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#fff"
-            android:drawableBottom="@drawable/addition"/>
-
-        <Button
-            android:id="@+id/addBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add book"
-            android:layout_gravity="center"
-            android:layout_marginBottom="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#fff"
-            android:drawableBottom="@drawable/addition"/>
-
-=======
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -89,6 +54,5 @@
             android:drawableTop="@drawable/ic_add_book"
             android:gravity="center"
             android:textColor="@android:color/black" />
->>>>>>> db36e64ff2f8a0737d559cb4801dcdae7411e9c9
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
