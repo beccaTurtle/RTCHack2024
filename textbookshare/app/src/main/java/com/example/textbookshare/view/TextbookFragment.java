@@ -44,7 +44,11 @@ public class TextbookFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Assign values
-        this.binding.textViewTitle.setText(textbook.getTitle());
+        String title = textbook.getTitle();
+        if(textbook.getEdition() > 0){
+
+        }
+        this.binding.textViewTitle.setText(title);
         this.binding.textViewAuthor.setText(textbook.getAuthor());
 
         // Set up the RecyclerView using View Binding
