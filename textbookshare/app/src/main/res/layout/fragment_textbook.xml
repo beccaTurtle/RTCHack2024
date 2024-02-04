@@ -7,7 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_addbook"
+        >
 
         <!-- Book Icon and Texts -->
         <LinearLayout
@@ -16,8 +18,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/outline2"
+            android:padding="20dp"
+
+
+            >
 
             <ImageView
                 android:id="@+id/imageViewBookIcon"
@@ -62,7 +70,8 @@
             android:layout_below="@id/layoutBookDetails"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
-            android:text="I Have This Textbook!" />
+            android:text="I Have This Textbook!"
+            android:backgroundTint="@color/tan"/>
 
         <!-- Button to indicate giving away the textbook -->
         <Button
@@ -72,7 +81,9 @@
             android:layout_below="@id/buttonGiveTextbook"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
-            android:text="I Gave Away This Textbook!" />
+            android:text="I Gave Away This Textbook!"
+            android:backgroundTint="@color/tan"
+            />
 
         <!-- RecyclerView for People Who Have the Book -->
         <androidx.recyclerview.widget.RecyclerView
