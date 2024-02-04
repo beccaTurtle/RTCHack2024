@@ -22,7 +22,7 @@ import com.example.textbookshare.model.Textbook;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AddBookFragment#newInstance} factory method to
+ * Use the {@link AddBookFragment} factory method to
  * create an instance of this fragment.
  */
 public class AddBookFragment extends Fragment {
