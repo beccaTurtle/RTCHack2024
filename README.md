@@ -28,6 +28,6 @@ We are proud that we were able to create a partially functioning prototype in on
 
 We learned collaboration and quick problem solving skills. We also deepened our understanding of Java and android app development.
 
-## What's next for Book Buddy
+## What's next
 
 Our next step would probably be to hook up our app with Google Firestore in order to share data between users over the internet!

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -101,7 +102,7 @@ public class TextbookFragment extends Fragment {
         // Remove the textbook from the user's list and add it to the textbook's list
         if (user == null) {
             // Show Snackbar if the user is null
-            showSnackbar("Please enter name and contact information first!");
+            Toast.makeText(getContext(), "Please enter name and contact information first!", Toast.LENGTH_LONG).show();
         } else {
             // Remove the textbook from the user's list and add it to the textbook's list
             user.deleteTextbook(textbook);

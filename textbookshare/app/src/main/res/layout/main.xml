@@ -27,28 +27,13 @@
 
         <Button
             android:id="@+id/searchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            android:layout_gravity="center"
-            android:layout_marginBottom="3dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#fff"
-            android:drawableBottom="@drawable/search"
-
-            />
-
-
-        <Button
-            android:id="@+id/addBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add book"
-            android:layout_gravity="center"
-            android:layout_marginBottom="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#fff"
-            android:drawableBottom="@drawable/addition"/>
+            android:background="@drawable/tan_button"
+            android:drawableTop="@drawable/ic_search"
+            android:gravity="center"
+            android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/profileBtn"
@@ -60,6 +45,14 @@
             android:gravity="center"
             android:textColor="@android:color/black" />
 
-
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tan_button"
+            android:drawableTop="@drawable/ic_add_book"
+            android:gravity="center"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
