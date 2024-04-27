@@ -1,6 +1,6 @@
 # RTCHack2024
 
-[Demo Video]([https://website-name.com](https://devpost.com/software/book-buddy-rhsgj4#updates))
+[Demo video](https://devpost.com/software/book-buddy-rhsgj4)
 
 ## Instructions
 
