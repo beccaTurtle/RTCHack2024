@@ -1,4 +1,4 @@
-# RTCHack2024: Book Buddy
+# Black Wings Hacks 2024: Book Buddy
 
 [Demo video](https://devpost.com/software/book-buddy-rhsgj4)
 
